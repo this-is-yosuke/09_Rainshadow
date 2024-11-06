@@ -1,10 +1,29 @@
+import fs from 'node:fs/promises'
 import dotenv from 'dotenv';
 dotenv.config();
 
 // TODO: Define an interface for the Coordinates object
+interface Coordinates {
+  lat: number; //latitude
+  lon: number; //longitude
+}
 
 // TODO: Define a class for the Weather object
+class Weather {
+city: string;
+date: Date;
+temperature: number;
+wind: number;
+humidity: number;
+constructor(city: string, date: Date, temperature: number, wind: number, humidity: number) {
+  this.city = city;
+  this.date = date;
+  this.temperature = temperature;
+  this.wind = wind;
+  this.humidity = humidity;
+}
 
+}
 // TODO: Complete the WeatherService class
 class WeatherService {
   // TODO: Define the baseURL, API key, and city name properties
