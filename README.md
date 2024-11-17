@@ -17,7 +17,7 @@ This app is for those who love to travel, but hate the unpredictability of the w
 
 ## 1. Installation
 
-Clone the repo here github.com/this-is-yosuke/09_Rainshadow
+Clone the repo here https://github.com/this-is-yosuke/09_Rainshadow
 
 ## 2. Usage
 
