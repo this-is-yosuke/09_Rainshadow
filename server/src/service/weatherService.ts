@@ -19,7 +19,7 @@ class Weather {
 city: string;
 // date: Date;
 date: Dayjs | string;
-temperatureF: number;
+tempF: number;
 windSpeed: number;
 humidity: number;
 icon: string;
@@ -27,7 +27,7 @@ iconDescription: string;
 constructor(
   city: string,
   date: Dayjs | string,
-  temperatureF: number,
+  tempF: number,
   windSpeed: number,
   humidity: number,
   icon: string,
@@ -35,7 +35,7 @@ constructor(
 ) {
   this.city = city;
   this.date = date;
-  this.temperatureF = temperatureF;
+  this.tempF = tempF;
   this.windSpeed = windSpeed;
   this.humidity = humidity;
   this.icon = icon;
