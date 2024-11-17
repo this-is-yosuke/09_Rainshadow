@@ -1,9 +1,10 @@
 # Rainshadow
+
 ![Github license](https://img.shields.io/badge/license-The_Unlicense-blue.svg)
 
 ## Description
 
-This app is for those who love to travel, but hate the unpredictability of the weather. With this app, users get a forecast, helping them plan their trips more effectively.
+This app is for those who love to travel, but hate the unpredictability of the weather. With this app, users get a forecast, helping them plan their trips more effectively. The following image shows the web application's appearance and functionality:![The weather app includes a search option, a list of cities, and a 5-day forecast and current weather conditions for Atlanta ](./Assets/09-servers-and-apis-homework-demo.png)
 
 ## Table of Contents
 
@@ -23,11 +24,10 @@ Clone the repo here github.com/this-is-yosuke/09_Rainshadow
 You will need to download TypeScript.
 
 ## 3. License
+
     This project is licensed under the The Unlicense license.
 
-
 * [License](#License)
-
 
 ## 4. Contributing
 
