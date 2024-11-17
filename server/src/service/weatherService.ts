@@ -65,16 +65,6 @@ class WeatherService {
       );
       return response[0];
 
-      // const response = await fetch(
-        // `${this.baseURL}/direct?q=${query}&appid${this.apiKey}`
-        // `${this.baseURL}/search.json?key=${this.apiKey}&q=${query}`
-        // this.buildGeocodeQuery();
-      // );
-      // const weathers = await response.json();
-      // const weatherInfo = await response.json();
-      // const mappedInfo = await this.destructureLocationData(weatherInfo.data);
-      // return mappedInfo;
-
     } catch (error) {
       console.log(error);
       throw error;
@@ -82,10 +72,6 @@ class WeatherService {
   }
   // TODO: Create destructureLocationData method ***
   private destructureLocationData(locationData: Coordinates): Coordinates {
-    // return {
-    //   lat: locationData.lat,
-    //   lon: locationData.lon,
-    // }
     if (!locationData) {
       throw new Error('City not found');
     }
@@ -103,36 +89,22 @@ class WeatherService {
   }
 
   // TODO: Create buildGeocodeQuery method ***
-  // private buildGeocodeQuery(city: string): string {
-  //   return `${this.baseURL}/data/2.5/weather?q=${city}&appid=${this.apiKey}`
-  // }
   private buildGeocodeQuery(): string {
     const geocodeQuery = `${this.baseURL}/geo/1.0/direct?q=${this.city}&limit=1&appid=${this.apiKey}`
     return geocodeQuery;
   }
   // TODO: Create buildWeatherQuery method
   private buildWeatherQuery(coordinates: Coordinates): string {
-    // return `${this.baseURL}/current.json?key=${this.apiKey}&q=${coordinates.lat},${coordinates.lon}`
-    // The below query is fetched STRAIGHT FROM THE SUBMISSIONS PAGE, FELLAS
     const weatherQuery =  `${this.baseURL}/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&units=imperial&appid=${this.apiKey}`
     return weatherQuery;
   }
   // TODO: Create fetchAndDestructureLocationData method
-  // private async fetchAndDestructureLocationData(city: string): Promise<Coordinates> {
-    //   const locationData = await this.fetchLocationData(city);
-    //   return locationData;
-    // }
     private async fetchAndDestructureLocationData() {
       return await this.fetchLocationData(this.buildGeocodeQuery()).then((data) => 
         this.destructureLocationData(data)
       );
     }
   // TODO: Create fetchWeatherData method
-  // private async fetchWeatherData(coordinates: Coordinates): Promise<any> {
-    //   const response = await fetch(this.buildWeatherQuery(coordinates));
-    //   const data = await response.json();
-    //   return this.parseCurrentWeather(data);
-    // }
     private async fetchWeatherData(coordinates: Coordinates) {
       try {
         const response = await fetch(this.buildWeatherQuery(coordinates)).then(
@@ -167,13 +139,6 @@ class WeatherService {
       response.weather[0].description || response.weather[0].main
     );
     return currentWeather;
-    // return new Weather(
-    //   response.current.city,
-    //   response.current.date,
-    //   response.current.temperature,
-    //   response.current.wind,
-    //   response.current.humidity
-    // );
   }
 
   // TODO: Complete buildForecastArray method
@@ -196,14 +161,8 @@ class WeatherService {
       );
     }
     return weatherForecast;
-    // return weatherData.map(day => ({
-    //   date: day.date,
-    //   maxTemp: day.day.maxtemp,
-    //   minTemp: day.day.mintemp,
-    //   condition: day.day.condition.text,
-    // })
-    // )
   }
+  
   // TODO: Complete getWeatherForCity method ***
   async getWeatherForCity(city: string) {
     try {
