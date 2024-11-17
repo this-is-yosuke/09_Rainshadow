@@ -21,7 +21,9 @@ Clone the repo here github.com/this-is-yosuke/09_Rainshadow
 
 ## 2. Usage
 
-You will need to download TypeScript.
+You will need to download TypeScript. You can also find the live version of the app on Render: 
+
+https://zero9-rainshadow.onrender.com
 
 ## 3. License
 
